@@ -1,0 +1,34 @@
+{
+  "name": "test-network",
+  "version": "1.0.0",
+  "client": {
+    "organization": "Org1",
+    "connection": {
+      "timeout": {
+        "peer": {
+          "endorser": "300"
+        }
+      }
+    }
+  },
+  "organizations": {
+    "Org1": {
+      "mspid": "Org1MSP",
+      "peers": ["peer0.org1.example.com"]
+    }
+  },
+  "orderers": {
+    "orderer.example.com": {
+      "url": "grpc://0.tcp.ap.ngrok.io:19363"
+    }
+  },
+  "peers": {
+    "peer0.org1.example.com": {
+      "url": "grpc://0.tcp.ap.ngrok.io:10777",
+      "grpcOptions": {
+        "ssl-target-name-override": "peer0.org1.example.com",
+        "hostnameOverride": "peer0.org1.example.com"
+      }
+    }
+  }
+}
